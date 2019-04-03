@@ -1,0 +1,171 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace QLVT_C13_PHANTAN
+{
+    public partial class frmNV : Form
+    {
+        public frmNV()
+        {
+            InitializeComponent();
+        }
+
+       
+
+        private void frmNV_Load(object sender, EventArgs e)
+        {
+            cmbCN.SelectedIndex = Program.mChinhanh;
+            // TODO: This line of code loads data into the 'dS.NHANVIEN' table. You can move, or remove it, as needed.
+            this.NHANVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.NHANVIENTableAdapter.Fill(this.dS.NHANVIEN);
+            // TODO: This line of code loads data into the 'dS.PHATSINH' table. You can move, or remove it, as needed.
+            this.pHATSINHTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.pHATSINHTableAdapter.Fill(this.dS.PHATSINH);
+            if (Program.mGroup == "CONGTY")
+            {
+                cmbCN.Enabled = true;
+                Program.SetEnableOfButton(this, false);
+                btnTim.Enabled = true;
+                btnThoat.Enabled = true;
+            }
+
+            else
+            {
+                cmbCN.Enabled = false;
+                Program.SetEnableOfButton(this, true);
+            }
+
+        }
+
+        private void hOTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCN_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCN.SelectedIndex == 0)
+            {
+                Program.servername = Program.servername1;
+                if (cmbCN.SelectedIndex != Program.mChinhanh)
+                {
+                    Program.mlogin = Program.mlogin1;
+                    Program.password = Program.password1;
+                }
+                else
+                {
+                    Program.mlogin = Program.mloginDN;
+                    Program.password = Program.passwordDN;
+                }
+            }
+            else
+            {
+                Program.servername = Program.servername2;
+                if (cmbCN.SelectedIndex != Program.mChinhanh)
+                {
+                    Program.mlogin = Program.mlogin2;
+                    Program.password = Program.password2;
+                }
+                else
+                {
+                    Program.mlogin = Program.mloginDN;
+                    Program.password = Program.passwordDN;
+                }
+            }
+
+            if (Program.KetNoi() == 0)
+            {
+                MessageBox.Show("L?i k?t n?i v? chi nhánh m?i", "", MessageBoxButtons.OK);
+                return;
+                Close();
+
+            }
+
+            this.NHANVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.NHANVIENTableAdapter.Fill(this.dS.NHANVIEN);
+            this.pHATSINHTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.pHATSINHTableAdapter.Fill(this.dS.PHATSINH);
+
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            bdsNV.AddNew();
+            if (cmbCN.SelectedIndex == 0) MACNTextBox.Text = "CN1";
+            else MACNTextBox.Text = "CN2";
+            MANVTextBox.Focus();
+        }
+
+        private void tnGhi_Click(object sender, EventArgs e)
+        {
+            if (MANVTextBox.Text == "")
+            {
+                MessageBox.Show("Mã NV không du?c r?ng", "", MessageBoxButtons.OK);
+                return;
+            }
+            // Tuong t? cho các cpntrols ho, ten, ngay, phai...
+            // Ki?m tra MANVTextBox.Text có b? trùng ? các phân m?nh ???
+            try
+            {
+                bdsNV.EndEdit();
+                bdsNV.ResetCurrentItem();
+
+                this.NHANVIENTableAdapter.Update(this.dS.NHANVIEN);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("L?i ghi :" + ex.Message, "", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (bdsPS.Count > 0)
+            {
+                MessageBox.Show("Không th? xóa nhân viên này vì dã l?p phi?u", "", MessageBoxButtons.OK);
+                return;
+            }
+
+            if (MessageBox.Show("B?n có th?t s? mu?n xóa nhân viên này? ", "Xóa nhân viên ?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                try
+                {
+                    bdsNV.RemoveCurrent();
+                    this.NHANVIENTableAdapter.Update(this.dS.NHANVIEN);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("L?i xóa! " + ex.Message, "", MessageBoxButtons.OK);
+
+                }
+        }
+
+        private void btnPhuHoi_Click(object sender, EventArgs e)
+        {
+            bdsNV.CancelEdit();
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            if (btnTim.Text == "Tìm")
+            {
+                btnTim.Text = "B?t d?u tìm";
+                txtManv.Visible = true;
+                txtManv.Focus();
+            }
+            else
+            {
+                btnTim.Text = "Tìm";
+                string mManv = txtManv.Text;
+                txtManv.Visible = false;
+                if (mManv == "") bdsNV.RemoveFilter();
+                else bdsNV.Filter = "MANV =" + mManv;
+            }
+        }
+    }
+}
