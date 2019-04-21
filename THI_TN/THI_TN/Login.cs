@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
 namespace THI_TN
 {
     public partial class Login : Form
@@ -24,7 +24,7 @@ namespace THI_TN
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-5BU4OJJ/CHRISTIAN;Initial Catalog=TRACNGHIEM;User ID=sa;Password=***********");
         }
     }
 }
