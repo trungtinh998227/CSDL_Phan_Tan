@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CSDL_Phan_Tan
+namespace THI_TN
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace CSDL_Phan_Tan
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Nhap_mon_hoc());
         }
     }
 }

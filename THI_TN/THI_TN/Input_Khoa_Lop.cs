@@ -8,13 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CSDL_Phan_Tan
+namespace THI_TN
 {
-    public partial class Form1 : Form
+    public partial class Input_Khoa_Lop : Form
     {
-        public Form1()
+        public Input_Khoa_Lop()
         {
             InitializeComponent();
+        }
+
+        private void Input_Khoa_Lop_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

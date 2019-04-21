@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CSDL_Phan_Tan.Properties {
+namespace THI_TN.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,11 +26,11 @@ namespace CSDL_Phan_Tan.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-5BU4OJJ\\TINH_NGUYEN;Initial Catalog=QLDSV;Integrated Security" +
-            "=True")]
-        public string QLDSVConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-5BU4OJJ\\CHRISTIAN;Initial Catalog=TRACNGHIEM;User ID=sa;Passw" +
+            "ord=123456")]
+        public string TRACNGHIEMConnectionString {
             get {
-                return ((string)(this["QLDSVConnectionString"]));
+                return ((string)(this["TRACNGHIEMConnectionString"]));
             }
         }
     }

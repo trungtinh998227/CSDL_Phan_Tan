@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B9C09A45-5FAC-40DE-BBEF-D8EF900D9E42}</ProjectGuid>
+    <ProjectGuid>{9A31DBD3-DD9C-4AB6-8C7B-F7CE3CD240C0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CSDL_Phan_Tan</RootNamespace>
-    <AssemblyName>CSDL_Phan_Tan</AssemblyName>
+    <RootNamespace>THI_TN</RootNamespace>
+    <AssemblyName>THI_TN</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,11 +54,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLDSVDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLDSVDataSet.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -80,17 +75,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="QLDSVDataSet.xsc">
-      <DependentUpon>QLDSVDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLDSVDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLDSVDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLDSVDataSet.xss">
-      <DependentUpon>QLDSVDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

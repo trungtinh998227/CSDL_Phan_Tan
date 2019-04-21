@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CSDL_Phan_Tan")]
+[assembly: AssemblyTitle("THI_TN")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CSDL_Phan_Tan")]
+[assembly: AssemblyProduct("THI_TN")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b9c09a45-5fac-40de-bbef-d8ef900d9e42")]
+[assembly: Guid("9a31dbd3-dd9c-4ab6-8c7b-f7ce3cd240c0")]
 
 // Version information for an assembly consists of the following four values:
 //
