@@ -17,7 +17,8 @@ namespace THI_TN
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Login());
-            Application.Run(new Nhap_mon_hoc());
+            //Application.Run(new Nhap_mon_hoc());
+            Application.Run(new Input_Khoa_Lop());
         }
     }
 }

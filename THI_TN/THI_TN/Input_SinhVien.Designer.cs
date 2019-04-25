@@ -149,6 +149,7 @@
             this.View_SINHVIEN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.View_SINHVIEN.Location = new System.Drawing.Point(41, 238);
             this.View_SINHVIEN.Name = "View_SINHVIEN";
+            this.View_SINHVIEN.RowHeadersVisible = false;
             this.View_SINHVIEN.Size = new System.Drawing.Size(589, 194);
             this.View_SINHVIEN.TabIndex = 4;
             // 
