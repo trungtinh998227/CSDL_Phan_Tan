@@ -46,11 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="check_DBExit.cs" />
+    <Compile Include="input_Monhoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="input_Monhoc.Designer.cs">
+      <DependentUpon>input_Monhoc.cs</DependentUpon>
     </Compile>
     <Compile Include="input_DeThi.cs">
       <SubType>Form</SubType>
@@ -84,8 +85,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="input_Monhoc.resx">
+      <DependentUpon>input_Monhoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="input_DeThi.resx">
       <DependentUpon>input_DeThi.cs</DependentUpon>

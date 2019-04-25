@@ -33,7 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.bnt_Login = new System.Windows.Forms.Button();
-            this.bnt_Cancel = new System.Windows.Forms.Button();
+            this.bnt_Register = new System.Windows.Forms.Button();
             this.txbUser = new System.Windows.Forms.TextBox();
             this.txbPass = new System.Windows.Forms.TextBox();
             this.cb_COSO = new System.Windows.Forms.ComboBox();
@@ -89,15 +89,15 @@
             this.bnt_Login.Text = "Login";
             this.bnt_Login.UseVisualStyleBackColor = true;
             // 
-            // bnt_Cancel
+            // bnt_Register
             // 
-            this.bnt_Cancel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnt_Cancel.Location = new System.Drawing.Point(299, 193);
-            this.bnt_Cancel.Name = "bnt_Cancel";
-            this.bnt_Cancel.Size = new System.Drawing.Size(75, 28);
-            this.bnt_Cancel.TabIndex = 3;
-            this.bnt_Cancel.Text = "Cancel";
-            this.bnt_Cancel.UseVisualStyleBackColor = true;
+            this.bnt_Register.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnt_Register.Location = new System.Drawing.Point(299, 193);
+            this.bnt_Register.Name = "bnt_Register";
+            this.bnt_Register.Size = new System.Drawing.Size(75, 28);
+            this.bnt_Register.TabIndex = 3;
+            this.bnt_Register.Text = "Register";
+            this.bnt_Register.UseVisualStyleBackColor = true;
             // 
             // txbUser
             // 
@@ -128,11 +128,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 254);
+            this.ClientSize = new System.Drawing.Size(399, 246);
             this.Controls.Add(this.cb_COSO);
             this.Controls.Add(this.txbPass);
             this.Controls.Add(this.txbUser);
-            this.Controls.Add(this.bnt_Cancel);
+            this.Controls.Add(this.bnt_Register);
             this.Controls.Add(this.bnt_Login);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -140,6 +140,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Login";
             this.Text = "Đăng Nhập";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,7 +153,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button bnt_Login;
-        private System.Windows.Forms.Button bnt_Cancel;
+        private System.Windows.Forms.Button bnt_Register;
         private System.Windows.Forms.TextBox txbUser;
         private System.Windows.Forms.TextBox txbPass;
         private System.Windows.Forms.ComboBox cb_COSO;

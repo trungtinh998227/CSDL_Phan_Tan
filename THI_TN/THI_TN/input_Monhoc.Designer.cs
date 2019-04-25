@@ -32,11 +32,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txb_TENMON = new System.Windows.Forms.TextBox();
-            this.cb_MaMH = new System.Windows.Forms.ComboBox();
             this.bntAdd = new System.Windows.Forms.Button();
             this.bntDel = new System.Windows.Forms.Button();
             this.bntEdit = new System.Windows.Forms.Button();
             this.View_MONHOC = new System.Windows.Forms.DataGridView();
+            this.txb_MAMON = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.View_MONHOC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,14 +77,6 @@
             this.txb_TENMON.Size = new System.Drawing.Size(297, 20);
             this.txb_TENMON.TabIndex = 1;
             // 
-            // cb_MaMH
-            // 
-            this.cb_MaMH.FormattingEnabled = true;
-            this.cb_MaMH.Location = new System.Drawing.Point(187, 81);
-            this.cb_MaMH.Name = "cb_MaMH";
-            this.cb_MaMH.Size = new System.Drawing.Size(295, 21);
-            this.cb_MaMH.TabIndex = 2;
-            // 
             // bntAdd
             // 
             this.bntAdd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,6 +86,7 @@
             this.bntAdd.TabIndex = 3;
             this.bntAdd.Text = "Thêm";
             this.bntAdd.UseVisualStyleBackColor = true;
+            this.bntAdd.Click += new System.EventHandler(this.bntAdd_Click);
             // 
             // bntDel
             // 
@@ -104,6 +97,7 @@
             this.bntDel.TabIndex = 3;
             this.bntDel.Text = "Xóa";
             this.bntDel.UseVisualStyleBackColor = true;
+            this.bntDel.Click += new System.EventHandler(this.bntDel_Click);
             // 
             // bntEdit
             // 
@@ -114,32 +108,49 @@
             this.bntEdit.TabIndex = 3;
             this.bntEdit.Text = "Sửa";
             this.bntEdit.UseVisualStyleBackColor = true;
+            this.bntEdit.Click += new System.EventHandler(this.bntEdit_Click);
             // 
             // View_MONHOC
             // 
+            this.View_MONHOC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.View_MONHOC.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.View_MONHOC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.View_MONHOC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.View_MONHOC.Location = new System.Drawing.Point(38, 159);
             this.View_MONHOC.Name = "View_MONHOC";
+            this.View_MONHOC.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.View_MONHOC.RowHeadersVisible = false;
+            this.View_MONHOC.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.View_MONHOC.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.View_MONHOC.Size = new System.Drawing.Size(530, 191);
             this.View_MONHOC.TabIndex = 4;
+            this.View_MONHOC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.View_MONHOC_CellClick);
+            // 
+            // txb_MAMON
+            // 
+            this.txb_MAMON.Location = new System.Drawing.Point(185, 81);
+            this.txb_MAMON.Name = "txb_MAMON";
+            this.txb_MAMON.Size = new System.Drawing.Size(297, 20);
+            this.txb_MAMON.TabIndex = 5;
             // 
             // Nhap_mon_hoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 430);
+            this.Controls.Add(this.txb_MAMON);
             this.Controls.Add(this.View_MONHOC);
             this.Controls.Add(this.bntEdit);
             this.Controls.Add(this.bntDel);
             this.Controls.Add(this.bntAdd);
-            this.Controls.Add(this.cb_MaMH);
             this.Controls.Add(this.txb_TENMON);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "Nhap_mon_hoc";
             this.Text = "Nhập môn học";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Nhap_mon_hoc_Load);
+            this.Click += new System.EventHandler(this.Nhap_mon_hoc_Click);
             ((System.ComponentModel.ISupportInitialize)(this.View_MONHOC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -152,11 +163,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txb_TENMON;
-        private System.Windows.Forms.ComboBox cb_MaMH;
         private System.Windows.Forms.Button bntAdd;
         private System.Windows.Forms.Button bntDel;
         private System.Windows.Forms.Button bntEdit;
         private System.Windows.Forms.DataGridView View_MONHOC;
+        private System.Windows.Forms.TextBox txb_MAMON;
     }
 }
 

@@ -144,6 +144,8 @@
             // 
             // View_SINHVIEN
             // 
+            this.View_SINHVIEN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.View_SINHVIEN.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.View_SINHVIEN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.View_SINHVIEN.Location = new System.Drawing.Point(41, 238);
             this.View_SINHVIEN.Name = "View_SINHVIEN";
