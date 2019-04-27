@@ -15,11 +15,11 @@ namespace THI_TN
     public partial class Login : Form
     {
         private SqlConnection conn;
-      
+        public static string datasSrc = @"Data Source=DESKTOP-5BU4OJJ\CHRISTIAN;Initial Catalog=THI_TN;User ID=sa;Password=123456;Asynchronous Processing=False;ApplicationIntent=ReadWrite";
         public Login()
         {
             InitializeComponent();
-            conn = new SqlConnection(@"Data Source=DESKTOP-5BU4OJJ\CHRISTIAN;Initial Catalog=TRACNGHIEM;User ID=sa;Password=123456;MultipleActiveResultSets=True;Context Connection=False;ApplicationIntent=ReadWrite");
+            conn = new SqlConnection(datasSrc);
             conn.Open();
         }
 

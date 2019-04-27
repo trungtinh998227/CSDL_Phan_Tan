@@ -14,12 +14,14 @@ namespace THI_TN
         private string tableName;
         private string valueKey;
         private SqlConnection conn;
+        string dataSrc;
         public check_DBExit(string primaryKey,string valueKey, string tableName)
         {
             this.primaryKey = primaryKey;
             this.tableName = tableName;
             this.valueKey = valueKey;
-            conn = new SqlConnection(@"Data Source=DESKTOP-5BU4OJJ\CHRISTIAN;Initial Catalog=TRACNGHIEM;User ID=sa;Password=123456;MultipleActiveResultSets=True;Context Connection=False;ApplicationIntent=ReadWrite");
+            dataSrc = Login.datasSrc;
+            conn = new SqlConnection(dataSrc);
         }
         public Boolean check()
         {

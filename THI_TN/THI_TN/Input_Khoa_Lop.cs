@@ -18,10 +18,12 @@ namespace THI_TN
         private DataTable view_KHOA;
         private DataTable view_Lop;
         private int indexRow;
+        string dataSrc;
         public Input_Khoa_Lop()
         {
             InitializeComponent();
-            conn = new SqlConnection(@"Data Source=DESKTOP-5BU4OJJ\CHRISTIAN;Initial Catalog=TRACNGHIEM;User ID=sa;Password=123456;MultipleActiveResultSets=True;Context Connection=False;ApplicationIntent=ReadWrite");
+            dataSrc = Login.datasSrc;
+            conn = new SqlConnection(dataSrc);
         }
 
         private void Input_Khoa_Lop_Load(object sender, EventArgs e)
@@ -55,6 +57,11 @@ namespace THI_TN
                 txb_MACS.Text = "CS1";
                 txb_TENKHOA.Text = row.Cells[1].Value.ToString();
             }
+        }
+
+        private void bnt_Lop_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

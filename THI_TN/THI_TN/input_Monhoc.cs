@@ -12,17 +12,17 @@ using System.Windows.Forms;
 
 namespace THI_TN
 {
-    
     public partial class Nhap_mon_hoc : Form
     {
         private SqlConnection conn;
         private SqlDataAdapter adapter;
         private int indexRow;
-
+        string dataSrc;
         public Nhap_mon_hoc()
         {
             InitializeComponent();
-            conn = new SqlConnection(@"Data Source=DESKTOP-5BU4OJJ\CHRISTIAN;Initial Catalog=TRACNGHIEM;User ID=sa;Password=123456;MultipleActiveResultSets=True;Context Connection=False;ApplicationIntent=ReadWrite");
+            dataSrc = Login.datasSrc;
+            conn = new SqlConnection(dataSrc);
             load_DataGridView();
         }
         private void load_DataGridView()
