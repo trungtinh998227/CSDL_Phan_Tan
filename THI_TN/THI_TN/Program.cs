@@ -18,9 +18,9 @@ namespace THI_TN
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Login());
             //Application.Run(new Nhap_mon_hoc());
-            //Application.Run(new Input_Khoa_Lop());
+            Application.Run(new Input_Khoa_Lop());
             //Application.Run(new Input_SinhVien());
-            Application.Run(new Input_GiaoVien());
+            //Application.Run(new Input_GiaoVien());
         }
     }
 }
