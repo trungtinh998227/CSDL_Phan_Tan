@@ -21,10 +21,5 @@ namespace THI_TN
         {
 
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

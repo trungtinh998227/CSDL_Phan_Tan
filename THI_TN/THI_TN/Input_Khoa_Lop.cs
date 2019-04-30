@@ -29,6 +29,14 @@ namespace THI_TN
         private void Input_Khoa_Lop_Load(object sender, EventArgs e)
         {
             Load_Khoa();
+            //Khoa
+            bnt_AddKhoa.Enabled = true;
+            bnt_DelKhoa.Enabled = false;
+            bnt_EditKhoa.Enabled = false;
+            //Lop
+            bnt_AddLop.Enabled = false;
+            bnt_DelLop.Enabled = false;
+            bnt_EditLop.Enabled = false;
         }
         private void Load_Khoa()
         {
@@ -55,6 +63,14 @@ namespace THI_TN
         private void View_Khoa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indexRow = e.RowIndex;
+            //Khoa
+            bnt_AddKhoa.Enabled = false;
+            bnt_DelKhoa.Enabled = true;
+            bnt_EditKhoa.Enabled = true;
+            //Lop
+            bnt_AddLop.Enabled = true;
+            bnt_DelLop.Enabled = false;
+            bnt_EditLop.Enabled = false;
             if (indexRow < 0)
             {
                 MessageBox.Show("Không thể sửa nội dung này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
@@ -66,27 +82,10 @@ namespace THI_TN
                 txb_MAKH.Text = row.Cells[0].Value.ToString();
                 txb_MACS.Text = row.Cells[2].Value.ToString();
                 txb_TENKHOA.Text = row.Cells[1].Value.ToString();
+                txb_MALOP.Text = "";
+                txb_TENLOP.Text = "";
             }
             load_Lop();
-        }
-
-        private void bnt_Lop_Click(object sender, EventArgs e)
-        {
-            conn.Open();
-            check_DBExit check_Lop = new check_DBExit("MALOP", txb_MALOP.Text.Trim(), "LOP");
-            if (check_Lop.check())
-            {
-                MessageBox.Show("Lớp đã tồn tại", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                string addValue = "";
-            }
-        }
-
-        private void bnt_Khoa_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void View_Lop_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -94,6 +93,14 @@ namespace THI_TN
             conn.Open();
             int index;
             index = e.RowIndex;
+            //Khoa
+            bnt_AddKhoa.Enabled = false;
+            bnt_DelKhoa.Enabled = false;
+            bnt_EditKhoa.Enabled = false;
+            //Lop
+            bnt_AddLop.Enabled = false;
+            bnt_DelLop.Enabled = true;
+            bnt_EditLop.Enabled = true;
             if (index < 0)
             {
                 MessageBox.Show("Không thể sửa nội dung này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
@@ -104,8 +111,107 @@ namespace THI_TN
                 DataGridViewRow row = View_Lop.Rows[index];
                 txb_MALOP.Text = row.Cells[0].Value.ToString();
                 txb_TENLOP.Text = row.Cells[1].Value.ToString();
+                
             }
             conn.Close();
+        }
+
+        private void bnt_AddKhoa_Click(object sender, EventArgs e)
+        {
+
+            conn.Open();
+            check_DBExit check_Khoa = new check_DBExit("MAKH", txb_MAKH.Text.Trim(), "KHOA");
+            if (check_Khoa.check())
+            {
+                MessageBox.Show("Khoa đã tồn tại", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                string addValue = "insert into KHOA (MAKH,TENKH,MACS) values ('"+txb_MAKH.Text+"','"+txb_TENKHOA.Text+"','"+txb_MACS.Text+"')";
+                adapter = new SqlDataAdapter(addValue, conn);
+                adapter.SelectCommand.ExecuteNonQuery();
+                conn.Close();
+            }
+            Load_Khoa();
+        }
+
+        private void bnt_AddLop_Click(object sender, EventArgs e)
+        {
+
+            conn.Open();
+            txb_MALOP.Text = "";
+            txb_TENLOP.Text = "";
+            check_DBExit check_Lop = new check_DBExit("MALOP", txb_MALOP.Text.Trim(), "LOP");
+            if (check_Lop.check())
+            {
+                MessageBox.Show("Lớp đã tồn tại", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+            else if (txb_MAKH.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập mã khoa", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+                string addValue = "insert into LOP (MALOP,TENLOP,MAKH) values ('" +txb_MALOP.Text + "','" + txb_TENLOP.Text + "','" + txb_MAKH.Text + "')";
+                adapter = new SqlDataAdapter(addValue, conn);
+                adapter.SelectCommand.ExecuteNonQuery();
+                conn.Close();
+            }
+            load_Lop();
+        }
+
+        private void bnt_DelKhoa_Click(object sender, EventArgs e)
+        {
+            check_DBExit check_Khoa = new check_DBExit("MAKH", txb_MAKH.Text.Trim(), "KHOA");
+            if (txb_MAKH.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập mã khoa", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+            else if(!check_Khoa.check())
+            {
+                MessageBox.Show("Khoa không tồn tại", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                conn.Open();
+                string delValue_Lop = "delete from LOP where MAKH='" + txb_MAKH.Text.Trim() + "'";
+                string delValue_Khoa = "delete from KHOA where MAKH='" + txb_MAKH.Text.Trim() + "'";
+                adapter = new SqlDataAdapter(delValue_Lop, conn);
+                adapter.SelectCommand.ExecuteNonQuery();
+                adapter = new SqlDataAdapter(delValue_Khoa, conn);
+                adapter.SelectCommand.ExecuteNonQuery();
+                conn.Close();
+                Load_Khoa();
+                load_Lop();
+            }
+        }
+
+        private void bnt_EditKhoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bnt_DelLop_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bnt_EditLop_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Input_Khoa_Lop_MouseClick(object sender, MouseEventArgs e)
+        {
+            //Khoa
+            bnt_AddKhoa.Enabled = true;
+            bnt_DelKhoa.Enabled = false;
+            bnt_EditKhoa.Enabled = false;
+            //Lop
+            bnt_AddLop.Enabled = false;
+            bnt_DelLop.Enabled = false;
+            bnt_EditLop.Enabled = false;
         }
     }
 }

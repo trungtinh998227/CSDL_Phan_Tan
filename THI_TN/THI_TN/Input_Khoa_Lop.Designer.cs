@@ -117,7 +117,7 @@
             // txb_MAKH
             // 
             this.txb_MAKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txb_MAKH.Location = new System.Drawing.Point(149, 72);
+            this.txb_MAKH.Location = new System.Drawing.Point(149, 76);
             this.txb_MAKH.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txb_MAKH.Name = "txb_MAKH";
             this.txb_MAKH.Size = new System.Drawing.Size(177, 26);
@@ -159,7 +159,7 @@
             this.bnt_AddKhoa.TabIndex = 3;
             this.bnt_AddKhoa.Text = "Thêm Khoa";
             this.bnt_AddKhoa.UseVisualStyleBackColor = true;
-            this.bnt_AddKhoa.Click += new System.EventHandler(this.bnt_Khoa_Click);
+            this.bnt_AddKhoa.Click += new System.EventHandler(this.bnt_AddKhoa_Click);
             // 
             // txb_MACS
             // 
@@ -204,7 +204,7 @@
             this.bnt_AddLop.TabIndex = 3;
             this.bnt_AddLop.Text = "Thêm Lớp";
             this.bnt_AddLop.UseVisualStyleBackColor = true;
-            this.bnt_AddLop.Click += new System.EventHandler(this.bnt_Lop_Click);
+            this.bnt_AddLop.Click += new System.EventHandler(this.bnt_AddLop_Click);
             // 
             // label8
             // 
@@ -233,7 +233,7 @@
             this.bnt_EditKhoa.TabIndex = 3;
             this.bnt_EditKhoa.Text = "Sửa Khoa";
             this.bnt_EditKhoa.UseVisualStyleBackColor = true;
-            this.bnt_EditKhoa.Click += new System.EventHandler(this.bnt_Khoa_Click);
+            this.bnt_EditKhoa.Click += new System.EventHandler(this.bnt_EditKhoa_Click);
             // 
             // bnt_DelKhoa
             // 
@@ -244,7 +244,7 @@
             this.bnt_DelKhoa.TabIndex = 3;
             this.bnt_DelKhoa.Text = "Xóa Khoa";
             this.bnt_DelKhoa.UseVisualStyleBackColor = true;
-            this.bnt_DelKhoa.Click += new System.EventHandler(this.bnt_Khoa_Click);
+            this.bnt_DelKhoa.Click += new System.EventHandler(this.bnt_DelKhoa_Click);
             // 
             // bnt_DelLop
             // 
@@ -255,7 +255,7 @@
             this.bnt_DelLop.TabIndex = 3;
             this.bnt_DelLop.Text = "Xóa Lớp";
             this.bnt_DelLop.UseVisualStyleBackColor = true;
-            this.bnt_DelLop.Click += new System.EventHandler(this.bnt_Lop_Click);
+            this.bnt_DelLop.Click += new System.EventHandler(this.bnt_DelLop_Click);
             // 
             // bnt_EditLop
             // 
@@ -266,7 +266,7 @@
             this.bnt_EditLop.TabIndex = 3;
             this.bnt_EditLop.Text = "Sửa Lớp";
             this.bnt_EditLop.UseVisualStyleBackColor = true;
-            this.bnt_EditLop.Click += new System.EventHandler(this.bnt_Lop_Click);
+            this.bnt_EditLop.Click += new System.EventHandler(this.bnt_EditLop_Click);
             // 
             // Input_Khoa_Lop
             // 
@@ -299,6 +299,7 @@
             this.Name = "Input_Khoa_Lop";
             this.Text = "Nhập Khoa-Lớp";
             this.Load += new System.EventHandler(this.Input_Khoa_Lop_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Input_Khoa_Lop_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.View_Lop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.View_Khoa)).EndInit();
             this.ResumeLayout(false);
