@@ -69,6 +69,8 @@
             // 
             // View_BODE
             // 
+            this.View_BODE.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.View_BODE.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.View_BODE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.View_BODE.Location = new System.Drawing.Point(18, 129);
             this.View_BODE.Name = "View_BODE";
@@ -83,6 +85,7 @@
             this.cb_MAMON.Name = "cb_MAMON";
             this.cb_MAMON.Size = new System.Drawing.Size(213, 21);
             this.cb_MAMON.TabIndex = 3;
+            this.cb_MAMON.SelectedIndexChanged += new System.EventHandler(this.cb_MAMON_SelectedIndexChanged);
             // 
             // txb_MAGV
             // 
@@ -103,6 +106,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "input_DeThi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập đề";
             this.Load += new System.EventHandler(this.input_DeThi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.View_BODE)).EndInit();

@@ -37,13 +37,15 @@
             this.txbUser = new System.Windows.Forms.TextBox();
             this.txbPass = new System.Windows.Forms.TextBox();
             this.cb_COSO = new System.Windows.Forms.ComboBox();
+            this.rd_SINHVIEN = new System.Windows.Forms.RadioButton();
+            this.rd_NHANVIEN = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(124, 20);
+            this.label1.Location = new System.Drawing.Point(158, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(147, 31);
             this.label1.TabIndex = 0;
@@ -88,6 +90,7 @@
             this.bnt_Login.TabIndex = 2;
             this.bnt_Login.Text = "Login";
             this.bnt_Login.UseVisualStyleBackColor = true;
+            this.bnt_Login.Click += new System.EventHandler(this.bnt_Login_Click);
             // 
             // bnt_Register
             // 
@@ -124,11 +127,37 @@
             this.cb_COSO.TabIndex = 5;
             this.cb_COSO.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // rd_SINHVIEN
+            // 
+            this.rd_SINHVIEN.AutoSize = true;
+            this.rd_SINHVIEN.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rd_SINHVIEN.Location = new System.Drawing.Point(339, 85);
+            this.rd_SINHVIEN.Name = "rd_SINHVIEN";
+            this.rd_SINHVIEN.Size = new System.Drawing.Size(76, 19);
+            this.rd_SINHVIEN.TabIndex = 6;
+            this.rd_SINHVIEN.TabStop = true;
+            this.rd_SINHVIEN.Text = "Sinh viên";
+            this.rd_SINHVIEN.UseVisualStyleBackColor = true;
+            // 
+            // rd_NHANVIEN
+            // 
+            this.rd_NHANVIEN.AutoSize = true;
+            this.rd_NHANVIEN.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rd_NHANVIEN.Location = new System.Drawing.Point(339, 112);
+            this.rd_NHANVIEN.Name = "rd_NHANVIEN";
+            this.rd_NHANVIEN.Size = new System.Drawing.Size(79, 19);
+            this.rd_NHANVIEN.TabIndex = 7;
+            this.rd_NHANVIEN.TabStop = true;
+            this.rd_NHANVIEN.Text = "Nhân viên";
+            this.rd_NHANVIEN.UseVisualStyleBackColor = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 246);
+            this.ClientSize = new System.Drawing.Size(442, 235);
+            this.Controls.Add(this.rd_NHANVIEN);
+            this.Controls.Add(this.rd_SINHVIEN);
             this.Controls.Add(this.cb_COSO);
             this.Controls.Add(this.txbPass);
             this.Controls.Add(this.txbUser);
@@ -157,5 +186,7 @@
         private System.Windows.Forms.TextBox txbUser;
         private System.Windows.Forms.TextBox txbPass;
         private System.Windows.Forms.ComboBox cb_COSO;
+        private System.Windows.Forms.RadioButton rd_SINHVIEN;
+        private System.Windows.Forms.RadioButton rd_NHANVIEN;
     }
 }

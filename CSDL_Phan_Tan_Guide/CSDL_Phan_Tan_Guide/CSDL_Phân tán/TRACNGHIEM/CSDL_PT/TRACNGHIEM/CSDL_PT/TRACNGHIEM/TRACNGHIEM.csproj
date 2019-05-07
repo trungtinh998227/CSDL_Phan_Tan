@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FF256A51-0890-465A-8A20-B9E34482813A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TRACNGHIEM</RootNamespace>
+    <AssemblyName>TRACNGHIEM</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.BonusSkins.v16.1" />
+    <Reference Include="DevExpress.Data.v16.1" />
+    <Reference Include="DevExpress.Printing.v16.1.Core" />
+    <Reference Include="DevExpress.Utils.v16.1" />
+    <Reference Include="DevExpress.XtraBars.v16.1" />
+    <Reference Include="DevExpress.Sparkline.v16.1.Core" />
+    <Reference Include="DevExpress.XtraEditors.v16.1" />
+    <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database.cs" />
+    <Compile Include="dexfrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dexfrmMain.Designer.cs">
+      <DependentUpon>dexfrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="distributionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>distributionDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="distributionDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>distributionDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGiaoVienDangKi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGiaoVienDangKi.Designer.cs">
+      <DependentUpon>frmGiaoVienDangKi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhapBoDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapBoDe.Designer.cs">
+      <DependentUpon>frmNhapBoDe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhapGiaoVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapGiaoVien.Designer.cs">
+      <DependentUpon>frmNhapGiaoVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhapKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapKhoa.Designer.cs">
+      <DependentUpon>frmNhapKhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhapLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapLop.Designer.cs">
+      <DependentUpon>frmNhapLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhapMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapMonHoc.Designer.cs">
+      <DependentUpon>frmNhapMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhapSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapSinhVien.Designer.cs">
+      <DependentUpon>frmNhapSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTaoLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaoLogin.Designer.cs">
+      <DependentUpon>frmTaoLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThi.Designer.cs">
+      <DependentUpon>frmThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmXemBangDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXemBangDiem.Designer.cs">
+      <DependentUpon>frmXemBangDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ketqua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ketqua.Designer.cs">
+      <DependentUpon>ketqua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TRACNGHIEMDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TRACNGHIEMDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TRACNGHIEMDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TRACNGHIEMDataSet1.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="dexfrmMain.resx">
+      <DependentUpon>dexfrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGiaoVienDangKi.resx">
+      <DependentUpon>frmGiaoVienDangKi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapBoDe.resx">
+      <DependentUpon>frmNhapBoDe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapGiaoVien.resx">
+      <DependentUpon>frmNhapGiaoVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapKhoa.resx">
+      <DependentUpon>frmNhapKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapLop.resx">
+      <DependentUpon>frmNhapLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapMonHoc.resx">
+      <DependentUpon>frmNhapMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapSinhVien.resx">
+      <DependentUpon>frmNhapSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaoLogin.resx">
+      <DependentUpon>frmTaoLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThi.resx">
+      <DependentUpon>frmThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXemBangDiem.resx">
+      <DependentUpon>frmXemBangDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ketqua.resx">
+      <DependentUpon>ketqua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="distributionDataSet.xsc">
+      <DependentUpon>distributionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="distributionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>distributionDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="distributionDataSet.xss">
+      <DependentUpon>distributionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="distributionDataSet1.xsc">
+      <DependentUpon>distributionDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="distributionDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>distributionDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="distributionDataSet1.xss">
+      <DependentUpon>distributionDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="TRACNGHIEMDataSet.xsc">
+      <DependentUpon>TRACNGHIEMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TRACNGHIEMDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TRACNGHIEMDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TRACNGHIEMDataSet.xss">
+      <DependentUpon>TRACNGHIEMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TRACNGHIEMDataSet1.xsc">
+      <DependentUpon>TRACNGHIEMDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TRACNGHIEMDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TRACNGHIEMDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TRACNGHIEMDataSet1.xss">
+      <DependentUpon>TRACNGHIEMDataSet1.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User-Interface-Login-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\secrecy-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ok-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock-vector-cloud-computing-concept-with-servers-in-the-cloud-cloud-server-vector-illustration-108068324.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home-Server-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Network-2-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Network-1-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Online-writing-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Online-writing-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\go-back-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Student-3-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Student-3-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Student-3-icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Teachers-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Books-2-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apps-preferences-contact-list-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\network-plug-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User-Interface-Login-icon %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Document-help-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tests-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\korganizer-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\korganizer-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database-add-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data-delete-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tests-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-document-save-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-button-cancel-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-file-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows-Close-Program-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database-add-icon %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data-delete-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-file-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-document-save-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows-Close-Program-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Distributor-report-icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="check_DBExit.cs" />
+    <Compile Include="GV_Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GV_Register.Designer.cs">
+      <DependentUpon>GV_Register.cs</DependentUpon>
+    </Compile>
     <Compile Include="input_Monhoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GV_Register.resx">
+      <DependentUpon>GV_Register.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="input_Monhoc.resx">
       <DependentUpon>input_Monhoc.cs</DependentUpon>
     </EmbeddedResource>
