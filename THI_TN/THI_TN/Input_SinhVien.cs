@@ -28,7 +28,18 @@ namespace THI_TN
 
         private void Input_SinhVien_Load(object sender, EventArgs e)
         {
-            
+            if (THI_TN.Menu.checks)
+            {
+                bnt_Add.Visible = false;
+                bnt_Del.Visible = false;
+                bnt_Edit.Visible = false;
+            }
+            else
+            {
+                bnt_Add.Visible = true;
+                bnt_Del.Visible = true;
+                bnt_Edit.Visible = true;
+            }
         }
         private void load_SINHVIEN()
         {

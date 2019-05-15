@@ -86,6 +86,18 @@ namespace THI_TN
             bntAdd.Enabled = true;
             bntDel.Enabled = false;
             bntEdit.Enabled = false;
+            if (THI_TN.Menu.checks)
+            {
+                bntAdd.Visible = false;
+                bntDel.Visible = false;
+                bntEdit.Visible = false;
+            }
+            else
+            {
+                bntAdd.Visible = true;
+                bntDel.Visible = true;
+                bntEdit.Visible = true;
+            }
         }
 
         private void Nhap_mon_hoc_Click(object sender, EventArgs e)

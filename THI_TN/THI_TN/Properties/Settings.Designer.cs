@@ -33,5 +33,16 @@ namespace THI_TN.Properties {
                 return ((string)(this["TRACNGHIEMConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-5BU4OJJ\\CHRISTIAN_1;Initial Catalog=THI_TN;User ID=sa;Passwor" +
+            "d=1234567")]
+        public string THI_TNConnectionString {
+            get {
+                return ((string)(this["THI_TNConnectionString"]));
+            }
+        }
     }
 }

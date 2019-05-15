@@ -89,6 +89,7 @@
             // 
             // txb_MAGV
             // 
+            this.txb_MAGV.Enabled = false;
             this.txb_MAGV.Location = new System.Drawing.Point(780, 91);
             this.txb_MAGV.Name = "txb_MAGV";
             this.txb_MAGV.Size = new System.Drawing.Size(213, 20);

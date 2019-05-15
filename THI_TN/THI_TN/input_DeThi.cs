@@ -16,9 +16,11 @@ namespace THI_TN
         private SqlConnection conn;
         private SqlDataAdapter adapter;
         private string dataSrc = "";
+        private string getID;
         public input_DeThi()
         {
             this.dataSrc = Login.datasSrc;
+            this.getID = Login.getID;
             conn = new SqlConnection(dataSrc);
             InitializeComponent();
             load_CBMADE();
@@ -48,7 +50,7 @@ namespace THI_TN
         }
         private void input_DeThi_Load(object sender, EventArgs e)
         {
-
+            txb_MAGV.Text = getID;
         }
 
         private void cb_MAMON_SelectedIndexChanged(object sender, EventArgs e)

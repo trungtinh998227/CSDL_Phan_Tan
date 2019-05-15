@@ -37,6 +37,25 @@ namespace THI_TN
             bnt_AddLop.Enabled = false;
             bnt_DelLop.Enabled = false;
             bnt_EditLop.Enabled = false;
+
+            if (THI_TN.Menu.checks)
+            {
+                bnt_AddKhoa.Visible = false;
+                bnt_DelKhoa.Visible = false;
+                bnt_EditKhoa.Visible = false;
+                bnt_AddLop.Visible = false;
+                bnt_DelLop.Visible = false;
+                bnt_EditLop.Visible = false;
+            }
+            else
+            {
+                bnt_AddKhoa.Visible = true;
+                bnt_DelKhoa.Visible = true;
+                bnt_EditKhoa.Visible = true;
+                bnt_AddLop.Visible = true;
+                bnt_DelLop.Visible = true;
+                bnt_EditLop.Visible = true;
+            }
         }
         private void Load_Khoa()
         {
@@ -126,10 +145,13 @@ namespace THI_TN
             }
             else
             {
+                dataSrc = Login.server;
+                conn = new SqlConnection(dataSrc);
                 string addValue = "insert into KHOA (MAKH,TENKH,MACS) values ('"+txb_MAKH.Text+"','"+txb_TENKHOA.Text+"','"+txb_MACS.Text+"')";
                 adapter = new SqlDataAdapter(addValue, conn);
                 adapter.SelectCommand.ExecuteNonQuery();
                 conn.Close();
+                dataSrc = Login.datasSrc;
                 Load_Khoa();
             }
         }
@@ -148,10 +170,13 @@ namespace THI_TN
             }
             else
             {
+                dataSrc = Login.server;
+                conn = new SqlConnection(dataSrc);
                 string addValue = "insert into LOP (MALOP,TENLOP,MAKH) values ('" +txb_MALOP.Text + "','" + txb_TENLOP.Text + "','" + txb_MAKH.Text + "')";
                 adapter = new SqlDataAdapter(addValue, conn);
                 adapter.SelectCommand.ExecuteNonQuery();
                 conn.Close();
+                dataSrc = Login.datasSrc;
                 load_Lop();
             }
             txb_MALOP.Text = "";

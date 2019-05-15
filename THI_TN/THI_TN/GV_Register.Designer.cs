@@ -42,12 +42,12 @@
             this.txb_LANTHI = new System.Windows.Forms.TextBox();
             this.txb_SOCAUTHI = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.View_DANGKY = new System.Windows.Forms.DataGridView();
             this.bntAdd = new System.Windows.Forms.Button();
             this.bnt_Del = new System.Windows.Forms.Button();
             this.bnt_edit = new System.Windows.Forms.Button();
-            this.time_picker = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txbTIME = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.View_DANGKY)).BeginInit();
             this.SuspendLayout();
             // 
             // cb_TENMON
@@ -64,9 +64,9 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(32, 132);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 19);
+            this.label1.Size = new System.Drawing.Size(70, 19);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Tên môn:";
+            this.label1.Text = "Mã môn:";
             // 
             // cb_TENLOP
             // 
@@ -82,9 +82,9 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(32, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 19);
+            this.label2.Size = new System.Drawing.Size(63, 19);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Tên lớp:";
+            this.label2.Text = "Mã lớp:";
             // 
             // date_Picker
             // 
@@ -175,13 +175,17 @@
             this.label8.TabIndex = 10;
             this.label8.Text = "Đăng ký thi";
             // 
-            // dataGridView1
+            // View_DANGKY
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 214);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(778, 249);
-            this.dataGridView1.TabIndex = 11;
+            this.View_DANGKY.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.View_DANGKY.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.View_DANGKY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.View_DANGKY.Location = new System.Drawing.Point(10, 214);
+            this.View_DANGKY.Name = "View_DANGKY";
+            this.View_DANGKY.RowHeadersVisible = false;
+            this.View_DANGKY.Size = new System.Drawing.Size(778, 249);
+            this.View_DANGKY.TabIndex = 11;
+            this.View_DANGKY.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.View_DANGKY_CellClick);
             // 
             // bntAdd
             // 
@@ -192,6 +196,7 @@
             this.bntAdd.TabIndex = 12;
             this.bntAdd.Text = "Thêm";
             this.bntAdd.UseVisualStyleBackColor = true;
+            this.bntAdd.Click += new System.EventHandler(this.bntAdd_Click);
             // 
             // bnt_Del
             // 
@@ -202,6 +207,7 @@
             this.bnt_Del.TabIndex = 13;
             this.bnt_Del.Text = "Xóa";
             this.bnt_Del.UseVisualStyleBackColor = true;
+            this.bnt_Del.Click += new System.EventHandler(this.bnt_Del_Click);
             // 
             // bnt_edit
             // 
@@ -212,29 +218,26 @@
             this.bnt_edit.TabIndex = 14;
             this.bnt_edit.Text = "Sửa";
             this.bnt_edit.UseVisualStyleBackColor = true;
+            this.bnt_edit.Click += new System.EventHandler(this.bnt_edit_Click);
             // 
-            // time_picker
+            // txbTIME
             // 
-            this.time_picker.CustomFormat = "hh:mm";
-            this.time_picker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.time_picker.Location = new System.Drawing.Point(701, 131);
-            this.time_picker.Name = "time_picker";
-            this.time_picker.ShowUpDown = true;
-            this.time_picker.Size = new System.Drawing.Size(82, 20);
-            this.time_picker.TabIndex = 15;
-            this.time_picker.Value = new System.DateTime(2019, 5, 3, 11, 24, 0, 0);
+            this.txbTIME.Location = new System.Drawing.Point(706, 131);
+            this.txbTIME.Name = "txbTIME";
+            this.txbTIME.Size = new System.Drawing.Size(74, 20);
+            this.txbTIME.TabIndex = 9;
             // 
             // GV_Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 476);
-            this.Controls.Add(this.time_picker);
             this.Controls.Add(this.bnt_edit);
             this.Controls.Add(this.bnt_Del);
             this.Controls.Add(this.bntAdd);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.View_DANGKY);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.txbTIME);
             this.Controls.Add(this.txb_SOCAUTHI);
             this.Controls.Add(this.txb_LANTHI);
             this.Controls.Add(this.label7);
@@ -251,7 +254,8 @@
             this.Name = "GV_Register";
             this.Text = "Giảng viên - Đăng ký";
             this.Load += new System.EventHandler(this.GV_Register_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Click += new System.EventHandler(this.GV_Register_Click);
+            ((System.ComponentModel.ISupportInitialize)(this.View_DANGKY)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,10 +277,10 @@
         private System.Windows.Forms.TextBox txb_LANTHI;
         private System.Windows.Forms.TextBox txb_SOCAUTHI;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView View_DANGKY;
         private System.Windows.Forms.Button bntAdd;
         private System.Windows.Forms.Button bnt_Del;
         private System.Windows.Forms.Button bnt_edit;
-        private System.Windows.Forms.DateTimePicker time_picker;
+        private System.Windows.Forms.TextBox txbTIME;
     }
 }

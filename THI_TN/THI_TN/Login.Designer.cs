@@ -33,12 +33,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.bnt_Login = new System.Windows.Forms.Button();
-            this.bnt_Register = new System.Windows.Forms.Button();
             this.txbUser = new System.Windows.Forms.TextBox();
             this.txbPass = new System.Windows.Forms.TextBox();
             this.cb_COSO = new System.Windows.Forms.ComboBox();
             this.rd_SINHVIEN = new System.Windows.Forms.RadioButton();
             this.rd_NHANVIEN = new System.Windows.Forms.RadioButton();
+            this.bntCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -84,7 +84,7 @@
             // bnt_Login
             // 
             this.bnt_Login.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnt_Login.Location = new System.Drawing.Point(196, 193);
+            this.bnt_Login.Location = new System.Drawing.Point(228, 188);
             this.bnt_Login.Name = "bnt_Login";
             this.bnt_Login.Size = new System.Drawing.Size(75, 28);
             this.bnt_Login.TabIndex = 2;
@@ -92,23 +92,12 @@
             this.bnt_Login.UseVisualStyleBackColor = true;
             this.bnt_Login.Click += new System.EventHandler(this.bnt_Login_Click);
             // 
-            // bnt_Register
-            // 
-            this.bnt_Register.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnt_Register.Location = new System.Drawing.Point(299, 193);
-            this.bnt_Register.Name = "bnt_Register";
-            this.bnt_Register.Size = new System.Drawing.Size(75, 28);
-            this.bnt_Register.TabIndex = 3;
-            this.bnt_Register.Text = "Register";
-            this.bnt_Register.UseVisualStyleBackColor = true;
-            // 
             // txbUser
             // 
             this.txbUser.Location = new System.Drawing.Point(130, 110);
             this.txbUser.Name = "txbUser";
             this.txbUser.Size = new System.Drawing.Size(175, 20);
             this.txbUser.TabIndex = 4;
-            this.txbUser.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txbPass
             // 
@@ -125,7 +114,6 @@
             this.cb_COSO.Name = "cb_COSO";
             this.cb_COSO.Size = new System.Drawing.Size(175, 21);
             this.cb_COSO.TabIndex = 5;
-            this.cb_COSO.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // rd_SINHVIEN
             // 
@@ -135,7 +123,6 @@
             this.rd_SINHVIEN.Name = "rd_SINHVIEN";
             this.rd_SINHVIEN.Size = new System.Drawing.Size(76, 19);
             this.rd_SINHVIEN.TabIndex = 6;
-            this.rd_SINHVIEN.TabStop = true;
             this.rd_SINHVIEN.Text = "Sinh viên";
             this.rd_SINHVIEN.UseVisualStyleBackColor = true;
             // 
@@ -147,9 +134,19 @@
             this.rd_NHANVIEN.Name = "rd_NHANVIEN";
             this.rd_NHANVIEN.Size = new System.Drawing.Size(79, 19);
             this.rd_NHANVIEN.TabIndex = 7;
-            this.rd_NHANVIEN.TabStop = true;
             this.rd_NHANVIEN.Text = "Nhân viên";
             this.rd_NHANVIEN.UseVisualStyleBackColor = true;
+            // 
+            // bntCancel
+            // 
+            this.bntCancel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntCancel.Location = new System.Drawing.Point(337, 188);
+            this.bntCancel.Name = "bntCancel";
+            this.bntCancel.Size = new System.Drawing.Size(75, 28);
+            this.bntCancel.TabIndex = 2;
+            this.bntCancel.Text = "Cancel";
+            this.bntCancel.UseVisualStyleBackColor = true;
+            this.bntCancel.Click += new System.EventHandler(this.bntCancel_Click);
             // 
             // Login
             // 
@@ -161,13 +158,14 @@
             this.Controls.Add(this.cb_COSO);
             this.Controls.Add(this.txbPass);
             this.Controls.Add(this.txbUser);
-            this.Controls.Add(this.bnt_Register);
+            this.Controls.Add(this.bntCancel);
             this.Controls.Add(this.bnt_Login);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
@@ -182,11 +180,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button bnt_Login;
-        private System.Windows.Forms.Button bnt_Register;
         private System.Windows.Forms.TextBox txbUser;
         private System.Windows.Forms.TextBox txbPass;
         private System.Windows.Forms.ComboBox cb_COSO;
         private System.Windows.Forms.RadioButton rd_SINHVIEN;
         private System.Windows.Forms.RadioButton rd_NHANVIEN;
+        private System.Windows.Forms.Button bntCancel;
     }
 }
